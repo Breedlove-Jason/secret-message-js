@@ -3,10 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <title>Secret Message JS</title>
-    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      .row{
+        margin-top: 25vh;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div id="message-show" class="card-panel hide">
+          <h1></h1>
+          <div>
+            <a href="./index.html">Create your own secret message.</a>
+          </div>
+        </div>
+        <div id="message-form" class="card-panel">
+          <form>
+            <label
+              >Enter a Secret Message
+              <input id="message-input" type="text" />
+            </label>
+            <button class="btn">Create</button>
+          </form>
+        </div>
+        <div id="link-form" class="card-panel hide">
+          <div>
+            Share this link with a friend
+            <label><input id="link-input" /></label>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

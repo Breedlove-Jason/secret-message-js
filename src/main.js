@@ -1,1 +1,16 @@
-import "/src/style.css"
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
+
+const { hash } = window.location;
+console.log("HASH", atob(hash.replace('#', '')));
+
+document.querySelector('form').addEventListener('submit',e => {
+    e.preventDefault()
+    document.querySelector("#message-form").classList.add('hide')
+    document.querySelector("#link-form").classList.remove('hide')
+    const input = document.querySelector('#message-input')
+    const encrypted = btoa(input.value)
+    const linkInput = document.querySelector('#link-input')
+    linkInput.value = `${window.location}#${encrypted}`
+    linkInput.select()
+})
